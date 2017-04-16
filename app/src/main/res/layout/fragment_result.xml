@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/layout_bg"
+    tools:context=".ResultFragment">
+
+    <TextView
+        android:id="@+id/result_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16sp"
+        android:layout_marginTop="16sp"
+        android:padding="0sp"
+        android:text="Язык:"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/add_to_fav_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="8sp"
+        android:padding="0sp"
+        android:clickable="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:drawableTop="@drawable/ic_favorite_border_black_48dp"
+        android:background="?attr/selectableItemBackgroundBorderless" />
+    <Button
+        android:id="@+id/copy_button"
+        android:layout_toLeftOf="@id/add_to_fav_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="8sp"
+        android:padding="0sp"
+        android:clickable="true"
+        android:layout_alignParentTop="true"
+        android:drawableTop="@drawable/ic_content_copy_black_48dp"
+        android:background="?attr/selectableItemBackgroundBorderless" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/result_language"
+        android:id="@+id/scrollView">
+        <TextView
+            android:id="@+id/final_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16sp"
+            android:padding="0sp"
+            android:text="Результат!!!"
+            android:autoLink="web"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:textColor="@color/white" />
+    </ScrollView>
+</RelativeLayout>

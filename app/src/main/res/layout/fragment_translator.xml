@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TranslatorFragment">
+
+    <EditText
+        android:id="@+id/initial_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="start"
+        android:background="?attr/selectableItemBackground"
+        android:textAppearance="@android:style/TextAppearance.Large"/>
+
+    <Button
+        android:id="@+id/translate_button"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:drawableTop="@drawable/ic_forward_black_48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        />
+
+</RelativeLayout>

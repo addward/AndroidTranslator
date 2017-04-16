@@ -1,0 +1,39 @@
+<android.support.v7.widget.GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:grid="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    grid:columnCount="3"
+    grid:rowCount="1"
+    tools:context="translator.addward.com.yandextranslator.ButtonsFragment">
+
+    <Spinner
+        android:id="@+id/initial_language_spinner"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        grid:layout_column="0"
+        grid:layout_columnWeight="1"
+        grid:layout_gravity="fill"
+        grid:layout_row="0"
+        grid:layout_rowWeight="1" />
+
+    <Spinner
+        android:id="@+id/final_language_spinner"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        grid:layout_column="2"
+        grid:layout_columnWeight="1"
+        grid:layout_gravity="fill"
+        grid:layout_row="0"
+        grid:layout_rowWeight="1" />
+
+    <Button
+        android:id="@+id/change_language_button"
+        android:layout_width="0sp"
+        android:layout_height="0sp"
+        android:text="@string/change_language_button"
+        grid:layout_column="1"
+        grid:layout_columnWeight="1"
+        grid:layout_row="0"
+        grid:layout_rowWeight="1" />
+</android.support.v7.widget.GridLayout>
