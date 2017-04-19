@@ -5,7 +5,6 @@ package translator.addward.com.yandextranslator;
  */
 import javax.net.ssl.HttpsURLConnection;
 import java.io.DataOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -30,6 +29,7 @@ public class Yandex {
             InputStream response = connection.getInputStream();
 
             String json = new java.util.Scanner(response).nextLine();
+            System.out.println(json);
             /*выделение переведенного текста из json*/
             int start = json.indexOf("[");
             int end = json.indexOf("]");

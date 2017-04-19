@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">YandexTranslator</string>
+    <string name="app_name">Переводчик</string>
+    <string name="favorites_page">Избранное</string>
     <string name="translate_button">Перевести</string>
     <string name="change_language_button">Поменять язык</string>
     <string name="message_copied">Текст скопирован</string>
+    <string name="history_page">История</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

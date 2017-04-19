@@ -1,9 +1,13 @@
 package translator.addward.com.yandextranslator;
 
+import android.content.Intent;
 import android.database.DataSetObserver;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
@@ -24,31 +28,38 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportActionBar().hide();
+        getSupportActionBar().show();
         Spinner spiner1 = (Spinner) findViewById(R.id.initial_language_spinner);
         Spinner spiner2 = (Spinner) findViewById(R.id.final_language_spinner);
         String[] languages = new String[Languages.languages.length];
-        for (int i =0; i<Languages.languages.length; i++){
+        for (int i = 0; i < Languages.languages.length; i++) {
             languages[i] = Languages.languages[i].getName();
         }
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,languages);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, languages);
         spiner1.setAdapter(adapter);
         spiner2.setAdapter(adapter);
     }
 
-    /*public void translateText(View view){
-        EditText input = (EditText) findViewById(R.id.input);
-        final String inputString = input.getText().toString();
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
 
-        Thread th = new Thread() {
-            @Override
-            public void run() {
-                outputString = Yandex.translate("ru", inputString);
-            }
-        };
-        th.start();
-        while (th.isAlive());
-        TextView output = (TextView) findViewById(R.id.output);
-        output.setText(outputString);
-    }*/
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.history_button) {
+            Intent intent = new Intent(this, BettaHistoryActivity.class);
+            intent.putExtra("MODE", "HISTORY");
+            startActivity(intent);
+        }
+        if (item.getItemId() == R.id.favorite_button) {
+            Intent intent = new Intent(this, BettaHistoryActivity.class);
+            intent.putExtra("MODE", "FAVORITES");
+            startActivity(intent);
+        }
+        return true;
+    }
+
 }

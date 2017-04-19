@@ -48,7 +48,7 @@ public class ResultFragment extends Fragment {
                 //Запись переведенного текста в буфер обмена
                 TextView finalText = (TextView) activity.findViewById(R.id.final_text);
                 String text = finalText.getText().toString();
-                text = text.subSequence(0,text.length()-Yandex.yandex.length()).toString();
+                if (text.length() > Yandex.yandex.length()) text = text.subSequence(0,text.length()-Yandex.yandex.length()).toString();
                 ClipboardManager clipBoard = (ClipboardManager) activity.getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = ClipData.newPlainText("",text);
                 clipBoard.setPrimaryClip(clip);
