@@ -1,2 +1,14 @@
 # AndroidTranslator
-Simple android translator that uses Yandex API
+### О приложении
+Простой переводчик на андроид, написанный с помощью Android Studio. 
+Перевод осуществляется средствами Yandex API
+
+### Запуск
+Для запуска проекта необходим Android Studio
+
+### API
+Минимальный API - 16
+
+### Скриншоты
+
+
