@@ -1,15 +1,15 @@
-# AndroidTranslator
-### О приложении
-Простой переводчик на андроид, написанный с помощью Android Studio. 
-Перевод осуществляется средствами Yandex API
+п»ї# AndroidTranslator
+### Рћ РїСЂРёР»РѕР¶РµРЅРёРё
+РџСЂРѕСЃС‚РѕР№ РїРµСЂРµРІРѕРґС‡РёРє РЅР° Р°РЅРґСЂРѕРёРґ, РЅР°РїРёСЃР°РЅРЅС‹Р№ СЃ РїРѕРјРѕС‰СЊСЋ Android Studio. 
+РџРµСЂРµРІРѕРґ РѕСЃСѓС‰РµСЃС‚РІР»СЏРµС‚СЃСЏ СЃСЂРµРґСЃС‚РІР°РјРё Yandex API
 
-### Запуск
-Для запуска проекта необходим Android Studio
+### Р—Р°РїСѓСЃРє
+Р”Р»СЏ Р·Р°РїСѓСЃРєР° РїСЂРѕРµРєС‚Р° РЅРµРѕР±С…РѕРґРёРј Android Studio
 
 ### API
-Минимальный API - 16
+РњРёРЅРёРјР°Р»СЊРЅС‹Р№ API - 16
 
-### Скриншоты
+### РЎРєСЂРёРЅС€РѕС‚С‹
 ![TranslatorPortrait](https://github.com/addward/AndroidTranslator/blob/master/Media/Screenshot_portrait.png)
 ![TranslatorLandscape](https://github.com/addward/AndroidTranslator/blob/master/Media/Screenshot_landscape.png)
 
