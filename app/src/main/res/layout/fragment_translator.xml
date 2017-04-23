@@ -1,25 +1,40 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:focusableInTouchMode="true"
+    android:descendantFocusability="beforeDescendants"
     tools:context=".TranslatorFragment">
 
     <EditText
         android:id="@+id/initial_text"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:gravity="start"
+        android:layout_weight="1"
+        android:padding="8dp"
         android:background="?attr/selectableItemBackground"
-        android:textAppearance="@android:style/TextAppearance.Large"/>
+        android:gravity="start"
+        android:hint="@string/text_for_translate_hint"
+        android:textAppearance="@android:style/TextAppearance.Large" />
 
-    <Button
-        android:id="@+id/translate_button"
+    <LinearLayout
         android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:drawableTop="@drawable/ic_forward_black_48dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/translate_delete_text"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/ic_clear_black_48dp" />
+
+        <Button
+            android:id="@+id/translate_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/ic_forward_black_48dp"
+            android:clickable="true" />
+    </LinearLayout>
+
+</LinearLayout>

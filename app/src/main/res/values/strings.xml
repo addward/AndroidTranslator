@@ -3,9 +3,17 @@
     <string name="favorites_page">Избранное</string>
     <string name="translate_button">Перевести</string>
     <string name="change_language_button">Поменять язык</string>
-    <string name="message_copied">Текст скопирован</string>
+    <string name="message_copied">Текст перевода скопирован</string>
     <string name="history_page">История</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_for_translate_hint">Текст для перевода</string>
+    <string name="translated_text_hint">Переведенный текст</string>
+    <string name="wrong_key_error">API ключ неверен</string>
+    <string name="blocked_key_error">API ключ заблокирован</string>
+    <string name="limit_key_error">API ключ израсходован</string>
+    <string name="too_long_text_error">Текст для перевода слишком длинный</string>
+    <string name="unable_to_translate_error">Невозможно перевести текст</string>
+    <string name="unsupported_direction_error">Заданное направление перевода не поддерживается</string>
+    <string name="internet_connection_error">Проблемы с интернет соединением</string>
+    <string name="other_error">Возникли проблемы</string>
+    <string name="empty_request">Пустой запрос</string>
 </resources>

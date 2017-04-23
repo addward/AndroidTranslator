@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.Spinner;
 
@@ -22,13 +23,12 @@ public class ButtonsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View fragmentView =  inflater.inflate(R.layout.fragment_buttons, container, false);
+        final View fragmentView = inflater.inflate(R.layout.fragment_buttons, container, false);
         Button changeLanguages = (Button) fragmentView.findViewById(R.id.change_language_button);
         changeLanguages.setOnClickListener(new View.OnClickListener() {
             // Создание объекта OnClickListener для кнопки, меняющей языки местами
             @Override
             public void onClick(View v) {
-                //Spinner'ы языков перевода
                 Spinner initialSpinner = (Spinner) fragmentView.findViewById(R.id.initial_language_spinner);
                 Spinner finalSpinner = (Spinner) fragmentView.findViewById(R.id.final_language_spinner);
                 //Текущие положения Spinner'ов

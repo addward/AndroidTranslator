@@ -1,34 +1,30 @@
 package translator.addward.com.yandextranslator;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.database.DataSetObserver;
 import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
+
+import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent;
+import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEventListener;
 
 public class MainActivity extends AppCompatActivity {
-
-    private static final int NUM_PAGES = 1;
-
-    private PagerAdapter mPagerAdapter;
-
-    static String outputString = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        int idLayout = R.layout.activity_main;
+        final Activity activity = this;
+        final TranslatorFragment fragment = (TranslatorFragment) (this.getFragmentManager().findFragmentById(R.id.initial_text_fragment));
+
+        setContentView(idLayout);
         getSupportActionBar().show();
+
         Spinner spiner1 = (Spinner) findViewById(R.id.initial_language_spinner);
         Spinner spiner2 = (Spinner) findViewById(R.id.final_language_spinner);
         String[] languages = new String[Languages.languages.length];
@@ -38,6 +34,18 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, languages);
         spiner1.setAdapter(adapter);
         spiner2.setAdapter(adapter);
+
+        KeyboardVisibilityEvent.setEventListener(
+                this,
+                new KeyboardVisibilityEventListener() {
+                    @Override
+                    public void onVisibilityChanged(boolean isOpen) {
+                        if (!isOpen) {
+                            TranslationInBackground translationInBackground = new TranslationInBackground(activity, 1, fragment);
+                            translationInBackground.execute();
+                        }
+                    }
+                });
     }
 
     @Override
@@ -61,5 +69,4 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
-
 }
