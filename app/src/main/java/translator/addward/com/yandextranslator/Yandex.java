@@ -10,7 +10,7 @@ import java.net.UnknownHostException;
 import java.util.StringTokenizer;
 
 public class Yandex {
-    public static String YANDEX = "\nПереведено сервисом «Яндекс.Переводчик» \nhttp://translate.yandex.ru";
+    public static String YANDEX = "\nПереведено сервисом «ЯндексПереводчик» \nhttp://translate.yandex.ru";
     public static String EMPTY_REQUEST = "";
     public static int CODE_EMPTY_REQEST = 333;
     public static int CODE_WRONG_KEY = 401;
@@ -64,6 +64,8 @@ public class Yandex {
                 String result = dictionary.findInDictionary(translatedText, finLang);
                 dictionaryText = result;
             }
+            if (dictionaryText == null) dictionaryText = YANDEX;
+            else dictionaryText += YANDEX;
             return new String[]{translatedText, dictionaryText, String.valueOf(0)};
 
 
