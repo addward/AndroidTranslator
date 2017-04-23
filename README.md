@@ -10,7 +10,7 @@
 Минимальный API - 16
 
 ### Скриншоты
-![TranslatorPortrait](https://github.com/addward/AndroidTranslator/Media/Screenshot_portrait.png)
-![TranslatorLandscape](https://github.com/addward/AndroidTranslator/Media/Screenshot_landscape.png)
+![TranslatorPortrait](https://github.com/addward/AndroidTranslator/blob/master/Media/Screenshot_portrait.png)
+![TranslatorLandscape](https://github.com/addward/AndroidTranslator/blob/master/Media/Screenshot_landscape.png)
 
 
