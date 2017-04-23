@@ -1,19 +1,13 @@
 package translator.addward.com.yandextranslator;
 
-import android.support.annotation.Nullable;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
-import java.util.List;
 
-/**
- * Created by adddw on 22.04.2017.
- */
 public class JsonParser {
 
     public static String interpretingDictionary(String string) {
+        /*Получение списка слов из JSON ответа словаря YANDEX API*/
         String result = "";
         try {
             JSONObject jsonObject = new JSONObject(string);
@@ -36,6 +30,7 @@ public class JsonParser {
     }
 
     public static int getCodeFromJson(String string) {
+        /*Получение кода операции из JSON ответа Yandex API переводчика*/
         try {
             JSONObject jsonObject = new JSONObject(string);
             int code = jsonObject.getInt("code");
@@ -47,6 +42,7 @@ public class JsonParser {
     }
 
     public static String getText(String string) {
+        /*Получение текста из JSON ответа сервера*/
         int start = string.indexOf("[");
         int end = string.indexOf("]");
         String result = string.substring(start + 2, end - 1);
@@ -54,6 +50,7 @@ public class JsonParser {
     }
 
     public static String[] getLanguages(String string) {
+        /*Получение языков перевода из JSON*/
         try {
             JSONObject jsonObject = new JSONObject(string);
             String result = jsonObject.getString("lang");
@@ -68,6 +65,7 @@ public class JsonParser {
     }
 
     public static ArrayList<String> getLanguagesList(String string) {
+        /*Получение поддерживаемых языков словаря YANDEX API из JSON*/
         ArrayList<String> arrayList = new ArrayList<>();
         try {
             JSONArray jsonArray = new JSONArray(string);

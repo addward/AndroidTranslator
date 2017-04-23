@@ -1,26 +1,21 @@
 package translator.addward.com.yandextranslator;
 
-import android.provider.Settings;
-import android.widget.ArrayAdapter;
-
 import java.io.DataOutputStream;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
-
 import javax.net.ssl.HttpsURLConnection;
 
-/**
- * Created by adddw on 22.04.2017.
- */
 public class YandexDictionary {
+    /*
     private static int ERR_OK = 200;
     private static int ERR_KEY_INVALID = 401;
     private static int ERR_KEY_BLOCKED = 402;
     private static int ERR_DAILY_REQ_LIMIT_EXCEEDED = 403;
     private static int ERR_TEXT_TOO_LONG = 413;
     private static int ERR_LANG_NOT_SUPPORTED = 501;
+    */
     private ArrayList<String> languageList;
     private static String urlDictionaryStr = "https://dictionary.yandex.net/api/v1/dicservice.json/lookup?key=dict.1.1.20170421T220559Z.27ed2cfbfb591d34.8713611c6c37d3b252236ae1097eff5abbed3135";
     private static String urlGetLanguagesStr = "https://dictionary.yandex.net/api/v1/dicservice.json/getLangs?key=dict.1.1.20170421T220559Z.27ed2cfbfb591d34.8713611c6c37d3b252236ae1097eff5abbed3135";

@@ -4,7 +4,6 @@ import android.support.v7.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,14 +14,12 @@ import android.widget.ListView;
 import android.widget.ResourceCursorAdapter;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class BettaHistoryActivity extends AppCompatActivity {
 
     private Context context;
     private HistoryDatabase database;
     private Cursor cursor;
-    private int mode; //mode=0 - History page, mode=1 - Favorites page
+    private int mode; //mode=0 - активити Истории, mode=1 - активити Избранного
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +73,7 @@ public class BettaHistoryActivity extends AppCompatActivity {
             TextView languageText = (TextView) view.findViewById(R.id.element_lang);
 
             if (mode == 1) {
-                ((ViewManager) view).removeView((View) delete);
+                ((ViewManager) view).removeView(delete);
                 delete = null;
             }
 

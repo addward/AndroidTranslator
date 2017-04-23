@@ -1,16 +1,6 @@
 package translator.addward.com.yandextranslator;
 
-/**
- * Created by adddw on 18.03.2017.
- */
-
-import android.provider.Settings;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import javax.net.ssl.HttpsURLConnection;
-
 import java.io.DataOutputStream;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -19,9 +9,6 @@ import java.net.URLEncoder;
 import java.net.UnknownHostException;
 import java.util.StringTokenizer;
 
-/**
- * Created by adddw on 18.03.2017.
- */
 public class Yandex {
     public static String YANDEX = "\nПереведено сервисом «Яндекс.Переводчик» \nhttp://translate.yandex.ru";
     public static String EMPTY_REQUEST = "";

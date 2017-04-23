@@ -4,15 +4,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
 import android.os.AsyncTask;
-import android.provider.Settings;
-import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * Created by adddw on 13.04.2017.
- */
 public class TranslationInBackground extends AsyncTask<Void, Void, String[]> {
     private Spinner initialLangSpinner, finalLangSpinner;
     private TextView initialText, finalText;
@@ -26,6 +21,7 @@ public class TranslationInBackground extends AsyncTask<Void, Void, String[]> {
     private Yandex yandex;
     private TranslatorFragment fragment;
     private Boolean addInDB;
+    private int addToDbFlag = 0;
     private ResultFragment finalFragment;
 
     //mode = 0 - перевод без добавления в БД, =1,2 - с добавлением
@@ -36,8 +32,6 @@ public class TranslationInBackground extends AsyncTask<Void, Void, String[]> {
         }
         this.mode = mode;
         context = mainActivity.getApplicationContext();
-
-        Button favoriteButton = (Button) mainActivity.findViewById(R.id.favorite_button);
 
         initialLangSpinner = (Spinner) mainActivity.findViewById(R.id.initial_language_spinner);
         finalLangSpinner = (Spinner) mainActivity.findViewById(R.id.final_language_spinner);
@@ -66,7 +60,7 @@ public class TranslationInBackground extends AsyncTask<Void, Void, String[]> {
 
     @Override
     public void onPostExecute(String[] a) {
-        if (mode != 2 && mode != 3) {
+        if ((mode != 2 && mode != 3) || addToDbFlag == 1) {
             String translateResult = a[0];
             String dictionaryResult = "";
             int code = Integer.parseInt(a[2]);
@@ -78,10 +72,9 @@ public class TranslationInBackground extends AsyncTask<Void, Void, String[]> {
             if (a[1] != null) dictionaryResult = a[1];
             finalText.setText(translateResult + dictionaryResult);
 
-            if (mode == 1 && !translateResult.equals(Yandex.EMPTY_REQUEST)) {
+            if ((mode == 1 && !translateResult.equals(Yandex.EMPTY_REQUEST)) || addToDbFlag == 1 ) {
 
                 String textWithoutYandex;
-
 
                 if (translateResult.length() > Yandex.YANDEX.length()) {
                     textWithoutYandex = translateResult.subSequence(0, translateResult.length() - Yandex.YANDEX.length()).toString();
@@ -114,7 +107,10 @@ public class TranslationInBackground extends AsyncTask<Void, Void, String[]> {
                     database.setElementFavorite(id, mode - 2);
                     return null;
                 }
-            } else favorite = 1;
+            } else {
+                favorite = mode - 2;
+                addToDbFlag = 1;
+            }
         }
         return result;
     }

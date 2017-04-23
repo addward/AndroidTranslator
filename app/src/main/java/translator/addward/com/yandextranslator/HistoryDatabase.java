@@ -3,23 +3,18 @@ package translator.addward.com.yandextranslator;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.support.annotation.Nullable;
 
-/**
- * Created by adddw on 13.04.2017.
- */
 public class HistoryDatabase {
     static final String DB_NAME = "historydatabase"; // Имя базы данных
     static final int DB_VERSION = 1; // Версия базы данных
-    static final String DB_TABLE = "HISTORY";
-    static final String DB_ICOLUMN = "INITIAL_TEXT";
-    static final String DB_OCOLUMN = "FINAL_TEXT";
-    static final String DB_FAVCOLUMN = "FAVORITE";
-    static final String DB_LANGCOLUMN = "LANGUAGES";
-    static final String DB_INHISTORY = "INHISTORY";
+    static final String DB_TABLE = "HISTORY"; // Имя таблицы
+    static final String DB_ICOLUMN = "INITIAL_TEXT"; //Колонка исходного текста
+    static final String DB_OCOLUMN = "FINAL_TEXT"; //Колонка перевода
+    static final String DB_FAVCOLUMN = "FAVORITE"; //Колонка нахождения перевода в избранном
+    static final String DB_LANGCOLUMN = "LANGUAGES"; //Колонка языков перевода
+    static final String DB_INHISTORY = "INHISTORY"; //Колонка нахождения перевода в истории
 
     private HistoryDatabaseHelper helper;
     private SQLiteDatabase database;
@@ -37,8 +32,10 @@ public class HistoryDatabase {
     public Cursor getAllData(int mode) {
         if (database != null) {
             if (mode == 0)
+                /*История*/
                 return database.query(DB_TABLE, null, DB_INHISTORY + " = ?", new String[]{"1"}, null, null, null);
             else
+                /*Избранное*/
                 return database.query(DB_TABLE, null, DB_FAVCOLUMN + " = ?", new String[]{"1"}, null, null, null);
         } else return null;
     }
@@ -58,7 +55,6 @@ public class HistoryDatabase {
     }
 
     public void removeElementWithIdFromHistory(int id) {
-        //if (database != null) database.delete(DB_TABLE, "_id = " + id, null);
         if (database != null) {
             ContentValues content = new ContentValues();
             content.put(DB_INHISTORY, String.valueOf("0"));
@@ -92,6 +88,7 @@ public class HistoryDatabase {
                     + DB_LANGCOLUMN + " TEXT, "
                     + DB_FAVCOLUMN + " INTEGER,"
                     + DB_INHISTORY + " INTEGER" + ");");
+            /*Добавление значений в таблицу для проверки работы БД*/
             insertTranslation(db, "Hello", "Привет", "en-ru", 0);
             insertTranslation(db, "Goodbye", "Пока", "en-ru", 1);
             insertTranslation(db, "Cat", "Кошка", "en-ru", 1);

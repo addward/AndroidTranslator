@@ -1,32 +1,18 @@
 package translator.addward.com.yandextranslator;
 
-
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.app.Fragment;
-import android.support.v4.database.DatabaseUtilsCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.util.Date;
-
-import translator.addward.com.yandextranslator.R;
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class TranslatorFragment extends Fragment {
 
     private TranslationInBackground translator;

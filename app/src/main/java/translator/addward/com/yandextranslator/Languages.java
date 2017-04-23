@@ -1,10 +1,5 @@
 package translator.addward.com.yandextranslator;
 
-import android.view.LayoutInflater;
-
-/**
- * Created by adddw on 08.04.2017.
- */
 public class Languages {
     private String name;
     private String shortName;

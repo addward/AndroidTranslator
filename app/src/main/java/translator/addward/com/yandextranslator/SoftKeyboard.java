@@ -8,7 +8,6 @@ package translator.addward.com.yandextranslator;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
-
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
