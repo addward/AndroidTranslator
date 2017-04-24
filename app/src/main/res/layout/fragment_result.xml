@@ -22,9 +22,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:padding="0sp"
                 android:autoLink="web"
                 android:hint="@string/translated_text_hint"
+                android:padding="0sp"
                 android:textAppearance="@android:style/TextAppearance.Large"
                 android:textColor="@color/white" />
         </ScrollView>
@@ -46,10 +46,10 @@
             android:id="@+id/favorite_button"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/ic_favorite_border_black_48dp"
             android:padding="0sp"
-            android:paddingTop="8dp"
-            android:layout_marginTop="8dp" />
+            android:paddingTop="8dp" />
 
     </LinearLayout>
 </LinearLayout>

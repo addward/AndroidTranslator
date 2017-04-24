@@ -3,54 +3,60 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="8dp">
+
     <RelativeLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="10">
-    <TextView
-        android:id="@+id/element_ftext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Final text"
-        android:textColor="@color/black"
-        android:textSize="20dp" />
 
-    <TextView
-        android:id="@+id/element_itext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/element_ftext"
-        android:text="Initial text"
-        android:textColor="@color/grey900"
-        android:textSize="15dp" />
+        <TextView
+            android:id="@+id/element_ftext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Final text"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/element_itext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/element_ftext"
+            android:scrollbars="vertical"
+            android:text="Initial text"
+            android:textColor="@color/grey900"
+            android:textSize="15dp" />
     </RelativeLayout>
+
     <TextView
         android:id="@+id/element_lang"
         android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:gravity="center_horizontal|center_vertical"
         android:text="Hello"
         android:textColor="@color/grey800"
-        android:layout_height="match_parent"
-        android:textSize="15dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:layout_weight="2"/>
+        android:textSize="15dp" />
+
     <ImageButton
         android:id="@+id/element_delete_button"
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:background="@drawable/ic_delete_black_24dp"
         android:layout_gravity="center_vertical"
+        android:background="@drawable/ic_delete_black_24dp"
         android:clickable="true"
         android:padding="0dp" />
+
     <ImageButton
         android:id="@+id/element_fav_button"
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:background="@drawable/ic_favorite_border_black_48dp"
         android:layout_gravity="center_vertical"
-        android:clickable="true"
-        android:padding="0dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginRight="8dp"/>
+        android:layout_marginRight="8dp"
+        android:background="@drawable/ic_favorite_border_black_48dp"
+        android:clickable="true"
+        android:padding="0dp" />
 
 
 </LinearLayout>
